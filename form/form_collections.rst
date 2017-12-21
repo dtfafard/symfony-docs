@@ -514,10 +514,10 @@ you will learn about next!).
             App\Entity\Task:
                 type: entity
                 # ...
-                oneToMany:
+                manyToMany:
                     tags:
                         targetEntity: Tag
-                        cascade:      [persist]
+                        cascade:      ["persist"]
 
         .. code-block:: xml
 
@@ -530,11 +530,11 @@ you will learn about next!).
 
                 <entity name="App\Entity\Task">
                     <!-- ... -->
-                    <one-to-many field="tags" target-entity="Tag">
+                    <many-to-many field="tags" target-entity="Tag">
                         <cascade>
                             <cascade-persist />
                         </cascade>
-                    </one-to-many>
+                    </many-to-many>
                 </entity>
             </doctrine-mapping>
 
